@@ -1,0 +1,16 @@
+PODS:
+  - SafeCategory (0.0.1)
+
+DEPENDENCIES:
+  - SafeCategory (from `../`)
+
+EXTERNAL SOURCES:
+  SafeCategory:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SafeCategory: 1240b7d52018f811ddec3babd704d0cd7aae917c
+
+PODFILE CHECKSUM: 1329a2d7dacaf137b465f6c84d583c428711eb9b
+
+COCOAPODS: 1.5.3
