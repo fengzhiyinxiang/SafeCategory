@@ -26,13 +26,13 @@ void TLogObject(id object){
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    [self testArraySafe];
-//    [self testMutableArraySafe];
-//    [self testMutableDictionarySafe];
-//    [self testMutableSetSafe];
-//    [self testMutableStringSafe];
-//    [self testNumberSafe];
-//    [self testStringSafe];
+    [self testArraySafe];
+    [self testMutableArraySafe];
+    [self testMutableDictionarySafe];
+    [self testMutableSetSafe];
+    [self testMutableStringSafe];
+    [self testNumberSafe];
+    [self testStringSafe];
     [self testObjectSafe];
 }
 
