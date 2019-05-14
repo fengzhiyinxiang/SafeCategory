@@ -15,7 +15,7 @@
     if (from <= self.length) {
         return [self substringFromIndex:from];
     } else {
-        return @"";
+        return nil;
     }
 }
 
@@ -24,7 +24,7 @@
     if (to <= self.length) {
         return [self substringToIndex:to];
     } else {
-        return @"";
+        return nil;
     }
 }
 
@@ -32,10 +32,10 @@
 {
     NSUInteger location = range.location;
     NSUInteger length = range.length;
-    if (location+length > self.length) {
-        return nil;
-    } else {
+    if (location + length <= self.length) {
         return [self substringWithRange:range];
+    } else {
+        return nil;
     }
 }
 
@@ -44,16 +44,7 @@
     if (aString) {
         return [self rangeOfString:aString];
     } else {
-        return NSMakeRange(NSNotFound, 0);
-    }
-}
-
-- (NSRange)safeRangeOfString:(NSString *)aString options:(NSStringCompareOptions)mask
-{
-    if (aString ) {
-        return [self rangeOfString:aString options:mask];
-    } else {
-        return NSMakeRange(NSNotFound, 0);
+        return NSMakeRange(0, 0);
     }
 }
 
@@ -62,7 +53,7 @@
     if (aString) {
         return [self stringByAppendingString:aString];
     } else {
-        return [self stringByAppendingString:@""];
+        return self;
     }
 }
 

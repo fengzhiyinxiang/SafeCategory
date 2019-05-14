@@ -10,15 +10,6 @@
 
 @implementation NSArray (Safe)
 
-- (id)safeObjectAtIndexedSubscript:(NSUInteger)index
-{
-    if (index < self.count) {
-        return [self objectAtIndex:index];
-    } else {
-        return nil;
-    }
-}
-
 - (id)safeObjectAtIndex:(NSUInteger)index
 {    
     if (index < self.count) {
@@ -30,12 +21,10 @@
 
 - (NSArray *)safeSubarrayWithRange:(NSRange)range
 {    
-    NSUInteger location = range.location;
-    NSUInteger length = range.length;
-    if (location + length <= self.count) {
+    if (range.location + range.length <= self.count) {
         return [self subarrayWithRange:range];
     }else {
-        return [NSArray array];
+        return nil;
     }
 }
 
@@ -44,7 +33,7 @@
     if (anObject) {
         return [self indexOfObject:anObject];
     } else {
-        return NSNotFound;
+        return 0;
     }
 }
 

@@ -8,30 +8,30 @@
 
 #import <Foundation/Foundation.h>
 
-id SafeObject(id object,Class class);
+_Nullable id SafeObject(_Nullable id object,_Nullable Class class);
 
-NSNumber *SafeNumber(NSNumber *number);
+NSNumber *_Nullable SafeNumber(NSNumber * _Nullable number);
 
-NSString *SafeString(NSString *string);
-NSMutableString *SafeMutableString(NSMutableString *mutableString);
+NSString *_Nullable SafeString(NSString * _Nullable string);
+NSMutableString *_Nullable SafeMutableString(NSMutableString *_Nullable mutableString);
 
-NSData *SafeData(NSData *data);
-NSMutableData *SafeMutableData(NSMutableData *mutableData);
+NSData *_Nullable SafeData(NSData *_Nullable data);
+NSMutableData *_Nullable SafeMutableData(NSMutableData *_Nullable mutableData);
 
-NSSet *SafeSet(NSSet *set);
-NSMutableSet *SafeMutableSet(NSMutableSet *mutableSet);
+NSSet *_Nullable SafeSet(NSSet *_Nullable set);
+NSMutableSet *_Nullable SafeMutableSet(NSMutableSet *_Nullable mutableSet);
 
-NSArray *SafeArray(NSArray *array);
-NSMutableArray *SafeMutableArray(NSMutableArray *mutableArray);
+NSArray *_Nullable SafeArray(NSArray *_Nullable array);
+NSMutableArray *_Nullable SafeMutableArray(NSMutableArray *_Nullable mutableArray);
 
-NSDictionary *SafeDictionary(NSDictionary *dictionary);
-NSMutableDictionary *SafeMutableDictionary(NSMutableDictionary *mutableDictionary);
+NSDictionary *_Nullable SafeDictionary(NSDictionary *_Nullable dictionary);
+NSMutableDictionary *_Nullable SafeMutableDictionary(NSMutableDictionary *_Nullable mutableDictionary);
 
 @interface NSObject (Safe)
 
-- (void)safeSetValue:(nullable id)value forKey:(NSString *)key;
+- (void)safeSetValue:(nullable id)value forKey:(nullable NSString *)key;
 
-- (nullable id)safeValueForKey:(NSString *)key;
+- (nullable id)safeValueForKey:(nullable NSString *)key;
 
 @end
 

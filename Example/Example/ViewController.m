@@ -41,6 +41,19 @@ void TLogObject(id object){
     NSArray *array = @[string];
     
     @try {
+        id object = array[1];
+        TLogObject(object);
+    } @catch (NSException *exception) {
+        TLogObject(exception.reason);
+        
+        id object = [array safeObjectAtIndex:NSIntegerMax];
+        object = [array safeObjectAtIndex:0];
+        TLogObject(object);
+    } @finally {
+        
+    }
+    
+    @try {
         [array objectAtIndex:NSIntegerMax];
     } @catch (NSException *exception) {
         TLogObject(exception.reason);
@@ -104,16 +117,6 @@ void TLogObject(id object){
     @try {
         
     } @catch (NSException *exception) {
-        [mutableArray safeInsertObjects:nil atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, NSIntegerMax)]];
-        [mutableArray safeInsertObjects:@[string,string] atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 2)]];
-        TLogObject(mutableArray);
-    } @finally {
-        
-    }
-    
-    @try {
-        
-    } @catch (NSException *exception) {
         [mutableArray safeRemoveObjectAtIndex:NSIntegerMax];
         [mutableArray safeRemoveObjectAtIndex:0];
         TLogObject(mutableArray);
@@ -158,7 +161,7 @@ void TLogObject(id object){
         [mutableSet addObject:object];
     } @catch (NSException *exception) {
         TLogObject(exception.reason);
-
+        
         [mutableSet safeAddObject:nil];
         [mutableSet safeAddObject:string];
         TLogObject(mutableSet);
@@ -170,7 +173,7 @@ void TLogObject(id object){
         [mutableSet removeObject:object];
     } @catch (NSException *exception) {
         TLogObject(exception.reason);
-
+        
         [mutableSet safeRemoveObject:nil];
         [mutableSet safeRemoveObject:string];
         TLogObject(mutableSet);
@@ -222,7 +225,7 @@ void TLogObject(id object){
 - (void)testStringSafe{
     NSString *string = @"NSString";
     
-//    1
+    //    1
     @try {
         [string substringFromIndex:NSIntegerMax];
     } @catch (NSException *exception) {
@@ -235,7 +238,7 @@ void TLogObject(id object){
         
     }
     
-//    2
+    //    2
     @try {
         [string substringToIndex:NSIntegerMax];
     } @catch (NSException *exception) {
@@ -248,7 +251,7 @@ void TLogObject(id object){
         
     }
     
-//    3
+    //    3
     @try {
         [string substringWithRange:NSMakeRange(0, NSIntegerMax)];
     } @catch (NSException *exception) {
@@ -261,7 +264,7 @@ void TLogObject(id object){
         
     }
     
-//    4
+    //    4
     @try {
         [string rangeOfString:nilString];
     } @catch (NSException *exception) {
@@ -274,7 +277,7 @@ void TLogObject(id object){
         
     }
     
-//    5
+    //    5
     @try {
         [string stringByAppendingString:nilString];
     } @catch (NSException *exception) {
@@ -325,7 +328,7 @@ void TLogObject(id object){
     NSString *ageValueString = @"18";
     NSString *nameString = @"name";
     NSString *nameValueString = @"nameValue";
-
+    
     @try {
         [testObject setValue:ageValueString forKey:ageString];
     } @catch (NSException *exception) {

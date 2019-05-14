@@ -18,8 +18,6 @@
 
 - (NSRange)safeRangeOfString:(NSString *)aString;
 
-- (NSRange)safeRangeOfString:(NSString *)aString options:(NSStringCompareOptions)mask;
-
 - (NSString *)safeStringByAppendingString:(NSString *)aString;
 
 @end

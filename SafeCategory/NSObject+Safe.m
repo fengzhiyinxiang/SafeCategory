@@ -65,7 +65,7 @@ NSMutableDictionary *SafeMutableDictionary(NSMutableDictionary *mutableDictionar
 
 @implementation NSObject (Safe)
 
-- (void)safeSetValue:(nullable id)value forKey:(NSString *)key{
+- (void)safeSetValue:(nullable id)value forKey:(nullable NSString *)key{
     if ([key isKindOfClass:[NSString class]]) {
         NSString *selectorString = [NSString stringWithFormat:@"set%@:",[key capitalizedString]];
         if ([self respondsToSelector:NSSelectorFromString(selectorString)]) {
@@ -74,7 +74,7 @@ NSMutableDictionary *SafeMutableDictionary(NSMutableDictionary *mutableDictionar
     }
 }
 
-- (nullable id)safeValueForKey:(NSString *)key{
+- (nullable id)safeValueForKey:(nullable NSString *)key{
     if ([key isKindOfClass:[NSString class]]) {
         NSString *selectorString = [NSString stringWithFormat:@"%@",key];
         if ([self respondsToSelector:NSSelectorFromString(selectorString)]) {
