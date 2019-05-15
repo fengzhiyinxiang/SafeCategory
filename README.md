@@ -31,11 +31,11 @@ SafeCategory
 
 使用方法
 ==============
-1.安全引用对象 
+1.安全引用对象  
 如果要使用一个对象，这个对象的值为nil会引起崩溃等问题，比如声明NSString的引用，可以这样写  
 SafeString(string)                                 
 
-2.安全调用方法
+2.安全调用方法  
 如果调用一个方法，这个方法可能引起崩溃，比如NSMutableArray添加对象，可以这样写  
 NSMutableArray *mutableArray = [NSMutableArray array];  
 NSString *string = @“string”;  
