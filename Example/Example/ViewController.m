@@ -7,8 +7,8 @@
 //
 
 #import "ViewController.h"
-#import "SafeCategory.h"
 #import "TestObject.h"
+#import <SafeCategory/SafeCategory.h>
 
 static NSString *nilString = nil;
 static NSNumber *nilNumber = nil;
