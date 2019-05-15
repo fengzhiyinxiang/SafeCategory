@@ -40,6 +40,7 @@ SafeString(string)
 NSMutableArray *mutableArray = [NSMutableArray array];  
 NSString *string = @“string”;  
 [mutableArray safeAddObject: string];   
+
 3.更多使用场景请去demo工程查看
 
 安装
